@@ -1,0 +1,49 @@
+express-ExpressJS is a web application framework for NodeJS,provides various features that make web application development fast and easy 
+body-parserprocess the request body
+bcrypt- for password encryption
+cors- cross origin request
+dotenv-for env variables
+gridfs-stream - for file upload
+multer multer-gridfs-storage- upload files locally
+helmet - for request safety
+morgan- for logging
+jsonwebtoken- for authentication
+mongoose- for mongodb access
+
+register function working -> 
+first we will encrypt the password, then save it and after we save it when the user tries to login they are going to put the password and we will salt the pass and return them a json web token
+
+The colors used in the project are included in themes .js which is imported from other component files such as homePage,login,navbar etc;
+
+Navbar--> the css styles are included in navbar with the help of box component in react which is present in flex between...We have also included a view section for desktop as well as mobile. The navbar can toggle into an icon or seperate options based on views i.e. mobile or desktop.The styles included in flexbetween are included as it imported...
+"& .MuiSvgIcon-root": { ... } sets styles for the MuiSvgIcon component within the parent component. In this case, it sets pr: "0.25rem" to add 0.25 rems of padding to the right of the icon and width: "3rem" to set the width of the icon to 3 rems.
+"& .MuiSelect-select:focus": { ... } sets styles for the MuiSelect component when it is focused. In this case, it sets backgroundColor: neutralLight to set the background color to the value of the neutralLight variable.
+These styles will be applied to the component in a dynamic way based on the state of the application or the props passed to the component.
+
+
+LoginPage-->
+1)index.jsx- contains all the css properties that our form will have!
+2)Form.jsx- we have used 
+
+code is a React component for creating a form for user registration and login. 
+It uses Formik for handling the form state and form submissions, yup for validating the form inputs, and useState, useNavigate, and useDispatch from react-redux for managing the form state, navigation, and data. 
+The form inputs are rendered using TextField from @mui/material and Dropzone from react-dropzone for uploading profile pictures. 
+The form submissions are sent to a back-end API for authentication and registration.
+When the user logs in successfully, their information is stored in the Redux store and they are redirected to the home page.
+
+Backend-->On the backend, the form sends HTTP requests to a local API server running on 
+`http://localhost:3001`to perform authentication operations, such as user registration and login. 
+The API server then sends back a response, which is processed by the form component and used to update the global state managed by the React Redux store.
+The form component also allows for file uploads, specifically for the profile picture, using the react-dropzone library. 
+The image file is appended to a FormData object, which is then sent to the API server during the user registration process.
+
+register schema is used in case if the user puts some wierdsymbols as name or email
+login schema is also used for same purpose as above
+initialValue Register is used for giving initial values instead of null
+in form.jsx all the initia values are set to "" by using the inital schhemas 
+ sx={{
+              "& > div": { gridColumn: isNonMobile ? undefined : "span 4" },
+            }} is used to change the field size based on device
+  
+UserWidget:
+This code is a React component called "UserWidget". It displays a user's information, such as their name, location, occupation, and social profiles. The component uses Material UI, Redux, and React Router for styling, state management, and navigation, respectively. The component fetches the user's data from an API using the user's ID and a bearer token stored in the Redux store. The component displays the user's data in a visually appealing format using Material UI components, such as Typography and Box, and custom components, such as FlexBetween and UserImage. The component also allows the user to navigate to their profile by clicking on their name.
